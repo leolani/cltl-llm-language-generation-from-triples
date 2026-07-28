@@ -1,0 +1,27 @@
+({'response': [
+             {'s': {'type': 'uri', 'value': 'http://cltl.nl/leolani/world/john'},
+              'slabel': {'type': 'literal', 'value': 'john'},
+              'p': {'type': 'uri', 'value': 'http://cltl.nl/leolani/n2mu/like'},
+              'pOriginal': {'type': 'uri', 'value': 'http://cltl.nl/leolani/n2mu/like'},
+              'o': {'type': 'uri', 'value': 'http://cltl.nl/leolani/world/music'},
+              'olabel': {'type': 'literal', 'value': 'music'},
+              'authorlabel': {'type': 'literal', 'value': 'human'},
+              'certaintyValue': {'type': 'literal', 'value': 'CERTAIN'},
+              'polarityValue': {'type': 'literal', 'value': 'POSITIVE'},
+              'sentimentValue': {'type': 'literal', 'value': 'UNDERSPECIFIED'},
+              'emotionValue': {'type': 'literal', 'value': 'UNDERSPECIFIED'}
+             }],
+              'question': {'chat': 'f51d2acf-a7df-4156-90e4-1c00ee0ffbd5', 'turn': '022094c8-8905-422f-90d7-302df076d1c5',
+                'author': {'label': 'Human', 'type': ['person'], 'uri': 'http://cltl.nl/leolani/world/human'},
+                'utterance': 'Who likes music?',
+                'utterance_type': < UtteranceType.QUESTION: '2' >,
+                'position': '0-16',
+                'subject': {'label': '', 'type': [], 'uri': None},
+                'predicate': {'label': 'like', 'type': [], 'uri': 'http://cltl.nl/leolani/n2mu/like'},
+                'object': {'label': 'music', 'type': [], 'uri': 'http://cltl.nl/leolani/world/music'},
+                'perspective': {'sentiment': 0.0, 'certainty': 1.0, 'polarity': 1.0, 'emotion': 0.0},
+                'context_id': 'f51d2acf-a7df-4156-90e4-1c00ee0ffbd5',
+                'timestamp': 1718888271633,
+                'triple': ?_like_music[_->_])},
+'rdf_log_path': None}
+)
