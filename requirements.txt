@@ -1,0 +1,2 @@
+langchain-ollama
+cltl.combot @ git+https://github.com/leolani/cltl-combot@main

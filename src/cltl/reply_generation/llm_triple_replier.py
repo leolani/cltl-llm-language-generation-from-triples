@@ -1,4 +1,3 @@
-import random
 import json
 
 from langchain_ollama import ChatOllama
@@ -11,11 +10,11 @@ class LLMTripleReplier():
 
         Parameters
         ----------
-
         """
         self._language = language
         self._ollama_client = ChatOllama( model= model_name,  temperature=0.1, num_ctx=4096 )    # limits KV-cache size, avoids GPU OOM
         self._processor = PromptProcessor(language)
+
 
 if __name__ == "__main__":
     model_name = "llama3.2"
