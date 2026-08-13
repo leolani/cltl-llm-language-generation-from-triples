@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 """
 kg_gap_finder.py
@@ -96,6 +95,7 @@ For remote SPARQL endpoints rdflib's built-in SPARQLWrapper support is used
 
 import argparse
 import json
+import os
 import sys
 from collections import defaultdict
 from typing import Dict, List, Set, Tuple
@@ -825,6 +825,21 @@ def print_report(report: Dict) -> None:
     )
 
 
+def _write_json_report(report: Dict, json_path: str) -> None:
+    """
+    Write the report as JSON to `json_path`, which may be relative (resolved
+    against the current working directory, same as plain open()) or
+    absolute. Any missing parent directories are created first, so e.g.
+    --json out/report.json works even if "out/" doesn't exist yet.
+    """
+    json_path = os.path.abspath(json_path)
+    parent = os.path.dirname(json_path)
+    if parent:
+        os.makedirs(parent, exist_ok=True)
+    with open(json_path, "w") as f:
+        json.dump(report, f, indent=2)
+
+
 # --------------------------------------------------------------------------- #
 # Convenience entry point (e.g. for Colab / notebooks, no argparse needed)
 # --------------------------------------------------------------------------- #
@@ -882,8 +897,7 @@ def analyze(
         print_report(report)
 
     if json_path:
-        with open(json_path, "w") as f:
-            json.dump(report, f, indent=2)
+        _write_json_report(report, json_path)
 
     return report
 
@@ -902,7 +916,7 @@ def main():
     parser.add_argument("--class-uri", default=None, help="Restrict predicate-gap / predicate-object-gap analysis to a single rdf:type URI (also includes its rdfs:subClassOf descendants)")
     parser.add_argument("--subject-uri", default=None, help="Restrict predicate gaps (sections B, D and E) to one specific subject URI instead of all instances")
     parser.add_argument("--examples", type=int, default=DEFAULT_EXAMPLE_LIMIT, help=f"Number of example entities to keep per group for drill-down in sections A and C only (default {DEFAULT_EXAMPLE_LIMIT}); sections B, D, E always report one row per affected subject")
-    parser.add_argument("--json", default=None, help="Optional path to write the full report as JSON")
+    parser.add_argument("--json", default=None, help="Optional path to write the full report as JSON; may be relative (resolved against the current working directory) or absolute, any missing parent directories are created automatically")
     args = parser.parse_args()
 
     if args.endpoint:
@@ -922,9 +936,8 @@ def main():
     print_report(report)
 
     if args.json:
-        with open(args.json, "w") as f:
-            json.dump(report, f, indent=2)
-        print(f"\nFull report written to {args.json}")
+        _write_json_report(report, args.json)
+        print(f"\nFull report written to {os.path.abspath(args.json)}")
 
 
 if __name__ == "__main__":
