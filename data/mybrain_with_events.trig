@@ -1,0 +1,115 @@
+@prefix ex:   <http://cltl.nl/leolani/n2mu/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+# ---------------------------------------------------------------------------
+# A small "brain" graph with three deliberate kinds of gaps, matching what
+# kg_gap_finder.py looks for:
+#
+#   A. Untyped entity      -> ex:mystery_object (has a triple, no rdf:type)
+#   B. Predicate gap       -> ex:carl is a Person missing ex:worksAt, which
+#                              the other two Person instances both have
+#   C. Dangling reference  -> ex:atlantis is referenced as a place but has
+#                              no outgoing triples of its own
+# ---------------------------------------------------------------------------
+
+
+
+ex:Consumable rdfs:subClassOf ex:Entity .
+ex:Person rdfs:subClassOf ex:Entity .
+ex:Event rdfs:subClassOf ex:Entity .
+
+ex:Lunch rdfs:subClassOf ex:Event .
+
+ex:Pizza rdfs:subClassOf ex:Food .
+ex:Cheese rdfs:subClassOf ex:Food .
+ex:Wine rdfs:subClassOf ex:Drink .
+
+ex:Food rdfs:subClassOf ex:Consumable .
+ex:Drink rdfs:subClassOf ex:Consumable .
+
+ex:Consumable ex:hasPortion ex:Portion .
+
+ex:Glass rdfs:subClassOf ex:Portion .
+ex:Slice rdfs:subClassOf ex:Portion .
+ex:Bite rdfs:subClassOf ex:Portion .
+########################################
+
+ex:lunch1 a ex:Lunch ;
+	ex:hasParticipant ex:selene ;
+	ex:hasPatient ex:wine1, ex:pizza1, ex:cheese1.
+
+ex:lunch2 a ex:Lunch ;
+	ex:hasParticipant ex:selene ;
+	ex:hasPatient ex:wine2, ex:pizza2, ex:cheese2.
+
+ex:lunch3 a ex:Lunch ;
+	ex:hasParticipant ex:leolani ;
+	ex:hasPatient ex:wine3.
+
+# lunch4 has no hasPatient unlike lunch1 -> predicate gap
+ex:lunch4 a ex:Lunch ;
+	ex:hasParticipant ex:leolani .
+
+ex:leolani a ex:Person ;
+    ex:name "Leolani" ;
+    ex:age 5 ;
+    ex:livesIn ex:amsterdam ;
+    ex:worksAt ex:vu_university .
+
+ex:selene a ex:Person ;
+    ex:name "Selene" ;
+    ex:age 30 ;
+    ex:livesIn ex:amsterdam ;
+    ex:worksAt ex:vu_university .
+
+ex:pizza1 a ex:Pizza ;
+	ex:hasPortion ex:slice1 .
+ex:pizza2 a ex:Pizza ;
+	ex:hasPortion ex:slice2 .
+
+ex:cheese1 a ex:Cheese ;
+	ex:hasPortion ex:slice3 .
+ex:cheese2 a ex:Cheese  ;
+	ex:hasPortion ex:slice4 .
+
+ex:slice1 a ex:Slice .
+ex:slice2 a ex:Slice .
+ex:slice3 a ex:Slice .
+ex:slice4 a ex:Slice .
+
+ex:glass1 a ex:Glass .
+ex:glass2 a ex:Glass .
+
+ex:wine1 a ex:Wine  ;
+	ex:hasPortion ex:glass1 .
+ex:wine2 a ex:Wine  ;
+	ex:hasPortion ex:glass2 .
+
+ex:wine3 a ex:Wine .
+
+# Carl has no ex:worksAt, unlike the two peers above -> predicate gap (B)
+ex:carl a ex:Person ;
+    ex:name "Carl" ;
+    ex:age 28 ;
+    ex:livesIn ex:atlantis .
+
+ex:amsterdam a ex:Place ;
+    ex:name "Amsterdam" ;
+    ex:country ex:netherlands .
+
+ex:netherlands a ex:Country ;
+    ex:name "The Netherlands" .
+
+ex:vu_university a ex:Organization ;
+    ex:name "Vrije Universiteit Amsterdam" ;
+    ex:locatedIn ex:amsterdam .
+
+# Atlantis is mentioned (as Carl's residence) but nothing further is known
+# about it -> dangling reference (C). Deliberately no triples with
+# ex:atlantis as subject.
+
+# mystery_object has a triple but is never typed with rdf:type -> untyped (A)
+ex:mystery_object ex:name "Unknown Object" ;
+    ex:foundAt ex:amsterdam .

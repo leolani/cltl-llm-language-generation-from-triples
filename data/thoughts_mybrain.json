@@ -1,0 +1,938 @@
+{
+  "untyped_entities": [
+    {
+      "predicate_signature": [
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+      ],
+      "instance_count": 11,
+      "example_entities": [
+        "http://cltl.nl/leolani/n2mu/Bite",
+        "http://cltl.nl/leolani/n2mu/Cheese",
+        "http://cltl.nl/leolani/n2mu/Drink",
+        "http://cltl.nl/leolani/n2mu/Event",
+        "http://cltl.nl/leolani/n2mu/Food"
+      ]
+    },
+    {
+      "predicate_signature": [
+        "http://cltl.nl/leolani/n2mu/foundAt",
+        "http://cltl.nl/leolani/n2mu/name"
+      ],
+      "instance_count": 1,
+      "example_entities": [
+        "http://cltl.nl/leolani/n2mu/mystery_object"
+      ]
+    },
+    {
+      "predicate_signature": [
+        "http://cltl.nl/leolani/n2mu/hasPortion",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf"
+      ],
+      "instance_count": 1,
+      "example_entities": [
+        "http://cltl.nl/leolani/n2mu/Consumable"
+      ]
+    }
+  ],
+  "predicate_gaps": [
+    {
+      "class": "http://cltl.nl/leolani/n2mu/Lunch",
+      "predicate": "http://cltl.nl/leolani/n2mu/hasPatient",
+      "subject": "http://cltl.nl/leolani/n2mu/lunch4",
+      "missing_count": 1,
+      "total_instances": 4,
+      "peer_coverage": "3/4",
+      "subject_triples": [
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/hasParticipant",
+          "object": "http://cltl.nl/leolani/n2mu/leolani"
+        },
+        {
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Lunch"
+        }
+      ],
+      "object_triples": [
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/age",
+          "object": "5"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/livesIn",
+          "object": "http://cltl.nl/leolani/n2mu/amsterdam"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/name",
+          "object": "Leolani"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/worksAt",
+          "object": "http://cltl.nl/leolani/n2mu/vu_university"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Person"
+        }
+      ]
+    },
+    {
+      "class": "http://cltl.nl/leolani/n2mu/Person",
+      "predicate": "http://cltl.nl/leolani/n2mu/worksAt",
+      "subject": "http://cltl.nl/leolani/n2mu/carl",
+      "missing_count": 1,
+      "total_instances": 3,
+      "peer_coverage": "2/3",
+      "subject_triples": [
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/age",
+          "object": "28"
+        },
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/livesIn",
+          "object": "http://cltl.nl/leolani/n2mu/atlantis"
+        },
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/name",
+          "object": "Carl"
+        },
+        {
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Person"
+        }
+      ],
+      "object_triples": []
+    },
+    {
+      "class": "http://cltl.nl/leolani/n2mu/Wine",
+      "predicate": "http://cltl.nl/leolani/n2mu/hasPortion",
+      "subject": "http://cltl.nl/leolani/n2mu/wine3",
+      "missing_count": 1,
+      "total_instances": 3,
+      "peer_coverage": "2/3",
+      "subject_triples": [
+        {
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Wine"
+        }
+      ],
+      "object_triples": []
+    }
+  ],
+  "dangling_references": [
+    {
+      "referencing_type": "(untyped subject)",
+      "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "count": 2,
+      "example_objects": [
+        "http://cltl.nl/leolani/n2mu/Entity",
+        "http://cltl.nl/leolani/n2mu/Portion"
+      ]
+    },
+    {
+      "referencing_type": "http://cltl.nl/leolani/n2mu/Person",
+      "predicate": "http://cltl.nl/leolani/n2mu/livesIn",
+      "count": 1,
+      "example_objects": [
+        "http://cltl.nl/leolani/n2mu/atlantis"
+      ]
+    },
+    {
+      "referencing_type": "http://cltl.nl/leolani/n2mu/Organization",
+      "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "count": 1,
+      "example_objects": [
+        "http://cltl.nl/leolani/n2mu/Organization"
+      ]
+    },
+    {
+      "referencing_type": "http://cltl.nl/leolani/n2mu/Place",
+      "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "count": 1,
+      "example_objects": [
+        "http://cltl.nl/leolani/n2mu/Place"
+      ]
+    },
+    {
+      "referencing_type": "http://cltl.nl/leolani/n2mu/Country",
+      "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "count": 1,
+      "example_objects": [
+        "http://cltl.nl/leolani/n2mu/Country"
+      ]
+    },
+    {
+      "referencing_type": "(untyped subject)",
+      "predicate": "http://cltl.nl/leolani/n2mu/hasPortion",
+      "count": 1,
+      "example_objects": [
+        "http://cltl.nl/leolani/n2mu/Portion"
+      ]
+    }
+  ],
+  "predicate_object_gaps": [
+    {
+      "class": "http://cltl.nl/leolani/n2mu/Lunch",
+      "predicate": "http://cltl.nl/leolani/n2mu/hasPatient",
+      "object_type": "http://cltl.nl/leolani/n2mu/Cheese",
+      "subject": "http://cltl.nl/leolani/n2mu/lunch3",
+      "missing_count": 2,
+      "total_instances": 4,
+      "peer_coverage": "2/4",
+      "subject_triples": [
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/hasParticipant",
+          "object": "http://cltl.nl/leolani/n2mu/leolani"
+        },
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/hasPatient",
+          "object": "http://cltl.nl/leolani/n2mu/wine3"
+        },
+        {
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Lunch"
+        }
+      ],
+      "object_triples": [
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/age",
+          "object": "5"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/livesIn",
+          "object": "http://cltl.nl/leolani/n2mu/amsterdam"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/name",
+          "object": "Leolani"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/worksAt",
+          "object": "http://cltl.nl/leolani/n2mu/vu_university"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Person"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/wine3",
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Wine"
+        }
+      ]
+    },
+    {
+      "class": "http://cltl.nl/leolani/n2mu/Lunch",
+      "predicate": "http://cltl.nl/leolani/n2mu/hasPatient",
+      "object_type": "http://cltl.nl/leolani/n2mu/Cheese",
+      "subject": "http://cltl.nl/leolani/n2mu/lunch4",
+      "missing_count": 2,
+      "total_instances": 4,
+      "peer_coverage": "2/4",
+      "subject_triples": [
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/hasParticipant",
+          "object": "http://cltl.nl/leolani/n2mu/leolani"
+        },
+        {
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Lunch"
+        }
+      ],
+      "object_triples": [
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/age",
+          "object": "5"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/livesIn",
+          "object": "http://cltl.nl/leolani/n2mu/amsterdam"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/name",
+          "object": "Leolani"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/worksAt",
+          "object": "http://cltl.nl/leolani/n2mu/vu_university"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Person"
+        }
+      ]
+    },
+    {
+      "class": "http://cltl.nl/leolani/n2mu/Lunch",
+      "predicate": "http://cltl.nl/leolani/n2mu/hasPatient",
+      "object_type": "http://cltl.nl/leolani/n2mu/Pizza",
+      "subject": "http://cltl.nl/leolani/n2mu/lunch3",
+      "missing_count": 2,
+      "total_instances": 4,
+      "peer_coverage": "2/4",
+      "subject_triples": [
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/hasParticipant",
+          "object": "http://cltl.nl/leolani/n2mu/leolani"
+        },
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/hasPatient",
+          "object": "http://cltl.nl/leolani/n2mu/wine3"
+        },
+        {
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Lunch"
+        }
+      ],
+      "object_triples": [
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/age",
+          "object": "5"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/livesIn",
+          "object": "http://cltl.nl/leolani/n2mu/amsterdam"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/name",
+          "object": "Leolani"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/worksAt",
+          "object": "http://cltl.nl/leolani/n2mu/vu_university"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Person"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/wine3",
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Wine"
+        }
+      ]
+    },
+    {
+      "class": "http://cltl.nl/leolani/n2mu/Lunch",
+      "predicate": "http://cltl.nl/leolani/n2mu/hasPatient",
+      "object_type": "http://cltl.nl/leolani/n2mu/Pizza",
+      "subject": "http://cltl.nl/leolani/n2mu/lunch4",
+      "missing_count": 2,
+      "total_instances": 4,
+      "peer_coverage": "2/4",
+      "subject_triples": [
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/hasParticipant",
+          "object": "http://cltl.nl/leolani/n2mu/leolani"
+        },
+        {
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Lunch"
+        }
+      ],
+      "object_triples": [
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/age",
+          "object": "5"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/livesIn",
+          "object": "http://cltl.nl/leolani/n2mu/amsterdam"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/name",
+          "object": "Leolani"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/worksAt",
+          "object": "http://cltl.nl/leolani/n2mu/vu_university"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Person"
+        }
+      ]
+    },
+    {
+      "class": "http://cltl.nl/leolani/n2mu/Lunch",
+      "predicate": "http://cltl.nl/leolani/n2mu/hasPatient",
+      "object_type": "http://cltl.nl/leolani/n2mu/Wine",
+      "subject": "http://cltl.nl/leolani/n2mu/lunch4",
+      "missing_count": 1,
+      "total_instances": 4,
+      "peer_coverage": "3/4",
+      "subject_triples": [
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/hasParticipant",
+          "object": "http://cltl.nl/leolani/n2mu/leolani"
+        },
+        {
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Lunch"
+        }
+      ],
+      "object_triples": [
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/age",
+          "object": "5"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/livesIn",
+          "object": "http://cltl.nl/leolani/n2mu/amsterdam"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/name",
+          "object": "Leolani"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/worksAt",
+          "object": "http://cltl.nl/leolani/n2mu/vu_university"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Person"
+        }
+      ]
+    },
+    {
+      "class": "http://cltl.nl/leolani/n2mu/Person",
+      "predicate": "http://cltl.nl/leolani/n2mu/livesIn",
+      "object_type": "http://cltl.nl/leolani/n2mu/Place",
+      "subject": "http://cltl.nl/leolani/n2mu/carl",
+      "missing_count": 1,
+      "total_instances": 3,
+      "peer_coverage": "2/3",
+      "subject_triples": [
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/age",
+          "object": "28"
+        },
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/livesIn",
+          "object": "http://cltl.nl/leolani/n2mu/atlantis"
+        },
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/name",
+          "object": "Carl"
+        },
+        {
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Person"
+        }
+      ],
+      "object_triples": []
+    },
+    {
+      "class": "http://cltl.nl/leolani/n2mu/Person",
+      "predicate": "http://cltl.nl/leolani/n2mu/worksAt",
+      "object_type": "http://cltl.nl/leolani/n2mu/Organization",
+      "subject": "http://cltl.nl/leolani/n2mu/carl",
+      "missing_count": 1,
+      "total_instances": 3,
+      "peer_coverage": "2/3",
+      "subject_triples": [
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/age",
+          "object": "28"
+        },
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/livesIn",
+          "object": "http://cltl.nl/leolani/n2mu/atlantis"
+        },
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/name",
+          "object": "Carl"
+        },
+        {
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Person"
+        }
+      ],
+      "object_triples": []
+    },
+    {
+      "class": "http://cltl.nl/leolani/n2mu/Wine",
+      "predicate": "http://cltl.nl/leolani/n2mu/hasPortion",
+      "object_type": "http://cltl.nl/leolani/n2mu/Glass",
+      "subject": "http://cltl.nl/leolani/n2mu/wine3",
+      "missing_count": 1,
+      "total_instances": 3,
+      "peer_coverage": "2/3",
+      "subject_triples": [
+        {
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Wine"
+        }
+      ],
+      "object_triples": []
+    }
+  ],
+  "predicate_object_instances_gaps": [
+    {
+      "class": "http://cltl.nl/leolani/n2mu/Lunch",
+      "predicate": "http://cltl.nl/leolani/n2mu/hasParticipant",
+      "object": "http://cltl.nl/leolani/n2mu/leolani",
+      "subject": "http://cltl.nl/leolani/n2mu/lunch1",
+      "missing_count": 2,
+      "total_instances": 4,
+      "peer_coverage": "2/4",
+      "subject_triples": [
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/hasParticipant",
+          "object": "http://cltl.nl/leolani/n2mu/selene"
+        },
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/hasPatient",
+          "object": "http://cltl.nl/leolani/n2mu/cheese1"
+        },
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/hasPatient",
+          "object": "http://cltl.nl/leolani/n2mu/pizza1"
+        },
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/hasPatient",
+          "object": "http://cltl.nl/leolani/n2mu/wine1"
+        },
+        {
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Lunch"
+        }
+      ],
+      "object_triples": [
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/cheese1",
+          "predicate": "http://cltl.nl/leolani/n2mu/hasPortion",
+          "object": "http://cltl.nl/leolani/n2mu/slice3"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/cheese1",
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Cheese"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/pizza1",
+          "predicate": "http://cltl.nl/leolani/n2mu/hasPortion",
+          "object": "http://cltl.nl/leolani/n2mu/slice1"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/pizza1",
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Pizza"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/selene",
+          "predicate": "http://cltl.nl/leolani/n2mu/age",
+          "object": "30"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/selene",
+          "predicate": "http://cltl.nl/leolani/n2mu/livesIn",
+          "object": "http://cltl.nl/leolani/n2mu/amsterdam"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/selene",
+          "predicate": "http://cltl.nl/leolani/n2mu/name",
+          "object": "Selene"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/selene",
+          "predicate": "http://cltl.nl/leolani/n2mu/worksAt",
+          "object": "http://cltl.nl/leolani/n2mu/vu_university"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/selene",
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Person"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/wine1",
+          "predicate": "http://cltl.nl/leolani/n2mu/hasPortion",
+          "object": "http://cltl.nl/leolani/n2mu/glass1"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/wine1",
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Wine"
+        }
+      ]
+    },
+    {
+      "class": "http://cltl.nl/leolani/n2mu/Lunch",
+      "predicate": "http://cltl.nl/leolani/n2mu/hasParticipant",
+      "object": "http://cltl.nl/leolani/n2mu/leolani",
+      "subject": "http://cltl.nl/leolani/n2mu/lunch2",
+      "missing_count": 2,
+      "total_instances": 4,
+      "peer_coverage": "2/4",
+      "subject_triples": [
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/hasParticipant",
+          "object": "http://cltl.nl/leolani/n2mu/selene"
+        },
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/hasPatient",
+          "object": "http://cltl.nl/leolani/n2mu/cheese2"
+        },
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/hasPatient",
+          "object": "http://cltl.nl/leolani/n2mu/pizza2"
+        },
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/hasPatient",
+          "object": "http://cltl.nl/leolani/n2mu/wine2"
+        },
+        {
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Lunch"
+        }
+      ],
+      "object_triples": [
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/cheese2",
+          "predicate": "http://cltl.nl/leolani/n2mu/hasPortion",
+          "object": "http://cltl.nl/leolani/n2mu/slice4"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/cheese2",
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Cheese"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/pizza2",
+          "predicate": "http://cltl.nl/leolani/n2mu/hasPortion",
+          "object": "http://cltl.nl/leolani/n2mu/slice2"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/pizza2",
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Pizza"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/selene",
+          "predicate": "http://cltl.nl/leolani/n2mu/age",
+          "object": "30"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/selene",
+          "predicate": "http://cltl.nl/leolani/n2mu/livesIn",
+          "object": "http://cltl.nl/leolani/n2mu/amsterdam"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/selene",
+          "predicate": "http://cltl.nl/leolani/n2mu/name",
+          "object": "Selene"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/selene",
+          "predicate": "http://cltl.nl/leolani/n2mu/worksAt",
+          "object": "http://cltl.nl/leolani/n2mu/vu_university"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/selene",
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Person"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/wine2",
+          "predicate": "http://cltl.nl/leolani/n2mu/hasPortion",
+          "object": "http://cltl.nl/leolani/n2mu/glass2"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/wine2",
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Wine"
+        }
+      ]
+    },
+    {
+      "class": "http://cltl.nl/leolani/n2mu/Lunch",
+      "predicate": "http://cltl.nl/leolani/n2mu/hasParticipant",
+      "object": "http://cltl.nl/leolani/n2mu/selene",
+      "subject": "http://cltl.nl/leolani/n2mu/lunch3",
+      "missing_count": 2,
+      "total_instances": 4,
+      "peer_coverage": "2/4",
+      "subject_triples": [
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/hasParticipant",
+          "object": "http://cltl.nl/leolani/n2mu/leolani"
+        },
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/hasPatient",
+          "object": "http://cltl.nl/leolani/n2mu/wine3"
+        },
+        {
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Lunch"
+        }
+      ],
+      "object_triples": [
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/age",
+          "object": "5"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/livesIn",
+          "object": "http://cltl.nl/leolani/n2mu/amsterdam"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/name",
+          "object": "Leolani"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/worksAt",
+          "object": "http://cltl.nl/leolani/n2mu/vu_university"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Person"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/wine3",
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Wine"
+        }
+      ]
+    },
+    {
+      "class": "http://cltl.nl/leolani/n2mu/Lunch",
+      "predicate": "http://cltl.nl/leolani/n2mu/hasParticipant",
+      "object": "http://cltl.nl/leolani/n2mu/selene",
+      "subject": "http://cltl.nl/leolani/n2mu/lunch4",
+      "missing_count": 2,
+      "total_instances": 4,
+      "peer_coverage": "2/4",
+      "subject_triples": [
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/hasParticipant",
+          "object": "http://cltl.nl/leolani/n2mu/leolani"
+        },
+        {
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Lunch"
+        }
+      ],
+      "object_triples": [
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/age",
+          "object": "5"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/livesIn",
+          "object": "http://cltl.nl/leolani/n2mu/amsterdam"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/name",
+          "object": "Leolani"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://cltl.nl/leolani/n2mu/worksAt",
+          "object": "http://cltl.nl/leolani/n2mu/vu_university"
+        },
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/leolani",
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Person"
+        }
+      ]
+    },
+    {
+      "class": "http://cltl.nl/leolani/n2mu/Cheese",
+      "predicate": "http://cltl.nl/leolani/n2mu/hasPortion",
+      "object": "http://cltl.nl/leolani/n2mu/slice3",
+      "subject": "http://cltl.nl/leolani/n2mu/cheese2",
+      "missing_count": 1,
+      "total_instances": 2,
+      "peer_coverage": "1/2",
+      "subject_triples": [
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/hasPortion",
+          "object": "http://cltl.nl/leolani/n2mu/slice4"
+        },
+        {
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Cheese"
+        }
+      ],
+      "object_triples": [
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/slice4",
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Slice"
+        }
+      ]
+    },
+    {
+      "class": "http://cltl.nl/leolani/n2mu/Cheese",
+      "predicate": "http://cltl.nl/leolani/n2mu/hasPortion",
+      "object": "http://cltl.nl/leolani/n2mu/slice4",
+      "subject": "http://cltl.nl/leolani/n2mu/cheese1",
+      "missing_count": 1,
+      "total_instances": 2,
+      "peer_coverage": "1/2",
+      "subject_triples": [
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/hasPortion",
+          "object": "http://cltl.nl/leolani/n2mu/slice3"
+        },
+        {
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Cheese"
+        }
+      ],
+      "object_triples": [
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/slice3",
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Slice"
+        }
+      ]
+    },
+    {
+      "class": "http://cltl.nl/leolani/n2mu/Person",
+      "predicate": "http://cltl.nl/leolani/n2mu/livesIn",
+      "object": "http://cltl.nl/leolani/n2mu/amsterdam",
+      "subject": "http://cltl.nl/leolani/n2mu/carl",
+      "missing_count": 1,
+      "total_instances": 3,
+      "peer_coverage": "2/3",
+      "subject_triples": [
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/age",
+          "object": "28"
+        },
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/livesIn",
+          "object": "http://cltl.nl/leolani/n2mu/atlantis"
+        },
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/name",
+          "object": "Carl"
+        },
+        {
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Person"
+        }
+      ],
+      "object_triples": []
+    },
+    {
+      "class": "http://cltl.nl/leolani/n2mu/Person",
+      "predicate": "http://cltl.nl/leolani/n2mu/worksAt",
+      "object": "http://cltl.nl/leolani/n2mu/vu_university",
+      "subject": "http://cltl.nl/leolani/n2mu/carl",
+      "missing_count": 1,
+      "total_instances": 3,
+      "peer_coverage": "2/3",
+      "subject_triples": [
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/age",
+          "object": "28"
+        },
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/livesIn",
+          "object": "http://cltl.nl/leolani/n2mu/atlantis"
+        },
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/name",
+          "object": "Carl"
+        },
+        {
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Person"
+        }
+      ],
+      "object_triples": []
+    },
+    {
+      "class": "http://cltl.nl/leolani/n2mu/Pizza",
+      "predicate": "http://cltl.nl/leolani/n2mu/hasPortion",
+      "object": "http://cltl.nl/leolani/n2mu/slice1",
+      "subject": "http://cltl.nl/leolani/n2mu/pizza2",
+      "missing_count": 1,
+      "total_instances": 2,
+      "peer_coverage": "1/2",
+      "subject_triples": [
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/hasPortion",
+          "object": "http://cltl.nl/leolani/n2mu/slice2"
+        },
+        {
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Pizza"
+        }
+      ],
+      "object_triples": [
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/slice2",
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Slice"
+        }
+      ]
+    },
+    {
+      "class": "http://cltl.nl/leolani/n2mu/Pizza",
+      "predicate": "http://cltl.nl/leolani/n2mu/hasPortion",
+      "object": "http://cltl.nl/leolani/n2mu/slice2",
+      "subject": "http://cltl.nl/leolani/n2mu/pizza1",
+      "missing_count": 1,
+      "total_instances": 2,
+      "peer_coverage": "1/2",
+      "subject_triples": [
+        {
+          "predicate": "http://cltl.nl/leolani/n2mu/hasPortion",
+          "object": "http://cltl.nl/leolani/n2mu/slice1"
+        },
+        {
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Pizza"
+        }
+      ],
+      "object_triples": [
+        {
+          "subject": "http://cltl.nl/leolani/n2mu/slice1",
+          "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+          "object": "http://cltl.nl/leolani/n2mu/Slice"
+        }
+      ]
+    }
+  ]
+}
